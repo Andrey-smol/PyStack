@@ -48,6 +48,18 @@ def test_stack_pop(create_stack, initial, expected):
     assert result == expected, f"Ожидаемое значение {expected}, полученное {result}"
 
 
+def test_stack_pop_(push_stack):
+    expected = 3
+    result = push_stack.pop()
+    assert result == expected, f"Ожидаемое значение {expected}, полученное {result}"
+    expected = 2
+    result = push_stack.pop()
+    assert result == expected, f"Ожидаемое значение {expected}, полученное {result}"
+    expected = 'Test'
+    result = push_stack.pop()
+    assert result == expected, f"Ожидаемое значение {expected}, полученное {result}"
+
+
 def test_stack_error(create_stack):
     with pytest.raises(IndexError):
         create_stack.pop()
